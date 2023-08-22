@@ -1,0 +1,12 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+
+<% if params[:id] == "2" %>
+  <input type="checkbox" id="completed" checked>
+  <label for="completed">Is the task completed</label>
+<% else %>
+  <input type="checkbox" id="completed">
+  <label for="completed">Is the task completed</label>
+<% end %>
+<%= link_to "Delete",
+task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
